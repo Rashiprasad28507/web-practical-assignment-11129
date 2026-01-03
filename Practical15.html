@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Manipulation Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 30px;
+        }
+        button {
+            padding: 5px 10px;
+            margin: 5px;
+        }
+        #output {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>DOM Manipulation Example</h1>
+
+    <h2 id="heading">Hello, World!</h2>
+    <button onclick="changeHeading()">Change Heading Text</button><br>
+
+    <p class="para">This is a paragraph.</p>
+    <button onclick="changeParagraph()">Change Paragraph Text</button><br>
+
+    <div id="output">This content will be replaced.</div>
+    <button onclick="updateDiv()">Update Div Content</button>
+
+    <script>
+
+        function changeHeading() {
+            let heading = document.getElementById('heading');
+            heading.innerHTML = "Heading Changed Using getElementById!";
+        }
+
+        function changeParagraph() {
+            let para = document.querySelector('.para'); 
+            para.innerHTML = "Paragraph Changed Using querySelector!";
+        }
+        function updateDiv() {
+            let outputDiv = document.getElementById('output');
+            outputDiv.innerHTML = "<strong>Content Updated!</strong> You can now see HTML tags rendered.";
+        }
+    </script>
+
+</body>
+</html>

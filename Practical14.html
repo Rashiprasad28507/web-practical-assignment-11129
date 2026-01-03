@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Validation Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 30px;
+        }
+        input, button {
+            padding: 5px;
+            margin: 5px 0;
+            width: 250px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Registration Form</h1>
+    <p>All fields are required. Use JS to validate!</p>
+
+    <form id="regForm" onsubmit="return validateForm()">
+
+        <label for="name">Full Name:</label><br>
+        <input type="text" id="name" name="name" oninput="validateName()"><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" oninput="validateEmail()"><br>
+
+        <label for="age">Age:</label><br>
+        <input type="number" id="age" name="age" oninput="validateAge()"><br>
+
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+
+    </form>
+
+    <script>
+
+        function validateForm() {
+            let name = document.getElementById('name').value.trim();
+            let email = document.getElementById('email').value.trim();
+            let age = document.getElementById('age').value;
+
+            if (name === "") {
+                alert("Name cannot be empty!");
+                return false; 
+            }
+
+            if (email === "" || !email.includes("@")) {
+                alert("Enter a valid email!");
+                return false;
+            }
+
+            if (age === "" || age < 1 || age > 120) {
+                alert("Enter a valid age between 1 and 120!");
+                return false;
+            }
+
+            alert("Form submitted successfully!");
+            return true; 
+        }
+
+        function validateName() {
+            let name = document.getElementById('name').value;
+            if (name.length > 0 && name.length < 3) {
+                alert("Name should be at least 3 characters!");
+            }
+        }
+
+        function validateEmail() {
+            let email = document.getElementById('email').value;
+            if (email.length > 0 && !email.includes("@")) {
+                alert("Email must contain '@' symbol!");
+            }
+        }
+
+        function validateAge() {
+            let age = document.getElementById('age').value;
+            if (age !== "" && (age < 1 || age > 120)) {
+                alert("Age must be between 1 and 120!");
+            }
+        }
+    </script>
+
+</body>
+</html>

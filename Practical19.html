@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas Drawing Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 30px;
+            text-align: center;
+        }
+        canvas {
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Canvas Drawing Example</h1>
+    <canvas id="myCanvas" width="400" height="300"></canvas>
+
+    <script>
+        const canvas = document.getElementById('myCanvas');
+        const ctx = canvas.getContext('2d');
+
+        ctx.fillStyle = 'lightblue';
+        ctx.fillRect(50, 30, 150, 100); 
+
+        
+        ctx.strokeStyle = 'blue';
+        ctx.lineWidth = 3;
+        ctx.strokeRect(50, 30, 150, 100);
+
+        ctx.beginPath();
+        ctx.arc(300, 80, 50, 0, Math.PI * 2); 
+        ctx.fillStyle = 'orange';
+        ctx.fill();
+        ctx.strokeStyle = 'red';
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(200, 200); 
+        ctx.lineTo(100, 280);
+        ctx.lineTo(300, 280);
+        ctx.closePath();
+        ctx.fillStyle = 'green';
+        ctx.fill();
+        ctx.strokeStyle = 'darkgreen';
+        ctx.stroke();
+
+        ctx.font = "20px Arial";
+        ctx.fillStyle = "purple";
+        ctx.fillText("Canvas Shapes!", 120, 20);
+    </script>
+
+</body>
+</html>

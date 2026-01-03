@@ -1,0 +1,141 @@
+<!-- PART 1: Create a Simple Personal Portfolio Website
+Project Structure
+portfolio/
+│── index.html
+│── style.css
+│── README.md
+
+🌐 index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Hi, I'm Alex</h1>
+        <p>Web Developer | Student</p>
+    </header>
+
+    <section class="about">
+        <h2>About Me</h2>
+        <p>I am learning web development and building projects.</p>
+    </section>
+
+    <section class="projects">
+        <h2>Projects</h2>
+        <ul>
+            <li>Portfolio Website</li>
+            <li>Responsive Web Page</li>
+            <li>CSS Layout Design</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>© 2026 Alex</p>
+    </footer>
+
+</body>
+</html>
+
+🎨 style.css
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 2rem;
+}
+
+section {
+    padding: 1.5rem;
+}
+
+.projects ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+}
+
+PART 2: Initialize Git Repository
+
+Open terminal / Git Bash inside your project folder:
+
+git init
+git status
+
+PART 3: Add Files & Commit Changes
+git add .
+git commit -m "Initial commit: personal portfolio website"
+
+PART 4: Push Code to GitHub
+1️⃣ Create a GitHub Repository
+
+Go to github.com
+
+Click New Repository
+
+Name it: portfolio
+
+Do NOT add README
+
+2️⃣ Connect Local Repo to GitHub
+git branch -M main
+git remote add origin https://github.com/USERNAME/portfolio.git
+git push -u origin main
+
+
+✅ Your code is now on GitHub!
+
+🔹 PART 5A: Deploy Using GitHub Pages (Recommended for Beginners)
+
+Go to GitHub → Repository → Settings
+
+Click Pages
+
+Select:
+
+Branch: main
+
+Folder: /root
+
+Click Save
+
+📌 Your site will be live at:
+
+https://USERNAME.github.io/portfolio/
+
+🔹 PART 5B: Deploy Using Netlify (Alternative)
+
+Go to https://netlify.com
+
+Login with GitHub
+
+Click Add new site → Import from GitHub
+
+Select your portfolio repo
+
+Click Deploy
+
+📌 Netlify gives you a live URL instantly
+
+🔹 Commands Summary (Exam-Friendly)
+git init
+git add .
+git commit -m "message"
+git remote add origin REPO_URL
+git push -u origin main -->

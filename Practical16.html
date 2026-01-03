@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Show/Hide & Toggle Class Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 30px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .highlight {
+            background-color: yellow;
+            color: red;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        button {
+            margin: 5px;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Show/Hide and Toggle CSS Class Demo</h1>
+
+    <p id="toggleParagraph">This paragraph can be shown or hidden.</p>
+    <button onclick="toggleVisibility()">Show/Hide Paragraph</button><br><br>
+
+    <p id="classParagraph">Click the button to highlight me!</p>
+    <button onclick="toggleHighlight()">Toggle Highlight Class</button>
+
+    <script>
+
+        function toggleVisibility() {
+            const para = document.getElementById('toggleParagraph');
+            if (para.style.display === "none") {
+                para.style.display = "block";
+            } else {
+                para.style.display = "none";
+            }
+        }
+
+        function toggleHighlight() {
+            const para = document.getElementById('classParagraph');
+            para.classList.toggle('highlight'); 
+        }
+    </script>
+
+</body>
+</html>

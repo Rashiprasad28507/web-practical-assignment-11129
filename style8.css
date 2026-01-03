@@ -1,0 +1,28 @@
+* {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.text {
+    color: blue;
+    margin: 20px;
+}
+
+#unique {
+    color: red;
+    font-weight: bold;
+    margin: 20px;
+}
+
+.container p {
+    color: green;
+    font-style: italic;
+    margin: 20px;
+}
+
+h1, h2, h3 {
+    text-align: center;
+    color: purple;
+    margin: 15px;
+}

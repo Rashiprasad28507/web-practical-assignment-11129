@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS Functions & Scope Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 30px;
+        }
+        button {
+            padding: 5px 10px;
+            margin: 5px;
+        }
+        #output {
+            margin-top: 20px;
+            white-space: pre-line;
+            background-color: #f0f0f0;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript Functions and Scope Demo</h1>
+
+    <button onclick="runDemo()">Run Demo</button>
+
+    <div id="output"></div>
+
+    <script>
+
+        function addNumbers(a, b) {
+            return a + b;
+        }
+
+        function scopeDemo() {
+            var varVariable = "I am a var variable (function scoped)";
+            let letVariable = "I am a let variable (block scoped)";
+            const constVariable = "I am a const variable (block scoped)";
+
+            var output = "Inside function:\n";
+            output += varVariable + "\n";
+            output += letVariable + "\n";
+            output += constVariable + "\n\n";
+
+            if (true) {
+                var varVariable = "Var inside block (overwrites function scope var)";
+                let letVariable = "Let inside block (only block scoped)";
+                const constVariable = "Const inside block (only block scoped)";
+                output += "Inside block:\n";
+                output += varVariable + "\n"; 
+                output += letVariable + "\n";
+                output += constVariable + "\n";
+            }
+
+            output += "\nBack in function scope:\n";
+            output += varVariable + "\n"; 
+            output += letVariable + "\n"; 
+            output += constVariable + "\n"; 
+
+            return output;
+        }
+
+
+        function runDemo() {
+            let num1 = 10;
+            let num2 = 20;
+            let sum = addNumbers(num1, num2);
+
+            let result = "=== Function Demo ===\n";
+            result += `Sum of ${num1} and ${num2} = ${sum}\n\n`;
+
+            result += "=== Scope Demo ===\n";
+            result += scopeDemo();
+
+            document.getElementById("output").innerText = result;
+        }
+    </script>
+
+</body>
+</html>

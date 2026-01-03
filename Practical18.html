@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Child Node Manipulation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 30px;
+        }
+        ul {
+            background-color: #f0f0f0;
+            padding: 10px;
+            width: 250px;
+            list-style-type: square;
+        }
+        li {
+            padding: 5px;
+            margin: 3px 0;
+            background-color: #e7e7e7;
+        }
+        button {
+            margin: 5px;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>DOM Child Node Manipulation</h1>
+
+    <ul id="itemList">
+        <li>Item 1</li>
+        <li>Item 2</li>
+    </ul>
+
+    <input type="text" id="newItem" placeholder="Enter new item">
+    <br>
+    <button onclick="addItem()">Add Item</button>
+    <button onclick="removeLastItem()">Remove Last Item</button>
+    <button onclick="modifyFirstItem()">Modify First Item</button>
+
+    <script>
+        const list = document.getElementById('itemList');
+
+        function addItem() {
+            const input = document.getElementById('newItem').value.trim();
+            if (input === "") {
+                alert("Please enter an item!");
+                return;
+            }
+
+            const li = document.createElement('li'); 
+            li.textContent = input; 
+            list.appendChild(li); 
+            document.getElementById('newItem').value = ""; 
+        }
+
+        function removeLastItem() {
+            if (list.lastElementChild) {
+                list.removeChild(list.lastElementChild);
+            } else {
+                alert("No items to remove!");
+            }
+        }
+
+        function modifyFirstItem() {
+            if (list.firstElementChild) {
+                list.firstElementChild.textContent = "Modified First Item";
+            } else {
+                alert("No items to modify!");
+            }
+        }
+    </script>
+
+</body>
+</html>

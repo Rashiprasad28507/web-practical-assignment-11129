@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS Conditional & Loops Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 30px;
+        }
+        input, button {
+            padding: 5px 10px;
+            margin: 5px;
+        }
+        #output {
+            margin-top: 20px;
+            white-space: pre-line;
+            background-color: #f0f0f0;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript Conditional and Loops Demo</h1>
+
+
+    <label for="number">Enter a number (1-10):</label>
+    <input type="number" id="number" min="1" max="10">
+    <button onclick="checkNumber()">Check Number</button>
+
+    <div id="output"></div>
+
+    <script>
+
+        function checkNumber() {
+            let num = parseInt(document.getElementById('number').value);
+            let output = "";
+
+            if (isNaN(num)) {
+                output += "Please enter a valid number.\n";
+            } else if (num >= 1 && num <= 3) {
+                output += "The number is small.\n";
+            } else if (num >= 4 && num <= 7) {
+                output += "The number is medium.\n";
+            } else if (num >= 8 && num <= 10) {
+                output += "The number is large.\n";
+            } else {
+                output += "Number out of range (1-10).\n";
+            }
+
+            output += "\nCounting up to your number using while loop:\n";
+            let i = 1;
+            while (i <= num) {
+                output += i + " ";
+                i++;
+            }
+
+            output += "\n\nCounting down from your number using do-while loop:\n";
+            let j = num;
+            if (j > 0) {
+                do {
+                    output += j + " ";
+                    j--;
+                } while (j > 0);
+            } else {
+                output += "Nothing to count down.";
+            }
+
+            document.getElementById('output').innerText = output;
+        }
+    </script>
+
+</body>
+</html>
