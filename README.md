@@ -1,2 +1,2 @@
 # Rashiprasad-11129
-mini project of web dev
+Practical assignment (1-20) 
